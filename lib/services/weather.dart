@@ -4,7 +4,7 @@ import 'package:clima/services/location.dart';
 class WeatherModel {
   Future getCityWeather(String cityName) async {
     var url =
-        'https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=d9fe4b97c7e7e6ce27f2dd4fe54880c8&units=metric';
+        'https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=(put ur app id)&units=metric'; // App Id missing
     NetworkHelper networkHelper = NetworkHelper(url);
     var weatherData = await networkHelper.getData();
     return weatherData;
@@ -15,7 +15,7 @@ class WeatherModel {
     await location.getCurrentLocation();
 
     NetworkHelper networkHelper = NetworkHelper(
-        'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=d9fe4b97c7e7e6ce27f2dd4fe54880c8&units=metric');
+        'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=(put ur app id)&units=metric'); // App Id missing
 
     var weatherData = await networkHelper.getData();
     return weatherData;
